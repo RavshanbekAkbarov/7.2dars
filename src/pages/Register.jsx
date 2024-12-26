@@ -31,7 +31,7 @@ function Register() {
         toast.error("Parollar bir xil emas!");
         return;
       }
-      registerWithEmailEndPassword(data.displayName, data.password, data.email);
+      registerWithEmailEndPassword(data.displayName, data.email, data.password);
     }
   }, [data]);
 
