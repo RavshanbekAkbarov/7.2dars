@@ -1,7 +1,8 @@
 import { useCollection } from "../hooks/useClollection";
 
 function OnlineUsersr() {
-  useCollection("users");
+  const { documents } = useCollection("users");
+  console.log(documents);
   return (
     <div className="w-[200px] bg-indigo-600 p-10 text-white">OnlineUsersr</div>
   );

@@ -1,17 +1,21 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { auth, db } from "../firebase/config";
+import { useDispatch } from "react-redux";
+import { doc, setDoc } from "firebase/firestore";
 
 export const useLogin = () => {
-  const loginWithEmailandPassword = (displayName, email, password) => {
+  const dispatch = useDispatch();
+  const loginWithEmailandPassword = async (displayName, email, password) => {
     console.log(email, password);
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((profile) => {
-        console.log(profile.user);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+    let res = await signInWithEmailAndPassword(auth, email, password);
+    await setDoc(doc(db, "users", res.user.uid), {
+      displayName: res.user.displayName,
+      id: res.user.uid,
+      online: true,
+    });
+    dispatch(login(profile.user));
   };
+
   return { loginWithEmailandPassword };
 };
