@@ -10,6 +10,7 @@ import MainLayout from "./layouts/MainLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import Create from "./pages/Create";
 
 //components
 import ProtectedRoutes from "./components/ProtectedRoutes";
@@ -26,6 +27,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { login, authReadyAct } from "./app/features/userSlice";
 import { useDispatch } from "react-redux";
 
+
 function App() {
   const dispatch = useDispatch();
   const { user, authReady } = useSelector((store) => store.user);
@@ -41,6 +43,10 @@ function App() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "/create",
+          element: <Create />,
         },
       ],
     },

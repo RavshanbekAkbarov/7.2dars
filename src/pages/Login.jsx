@@ -28,14 +28,8 @@ function Login() {
     <div
       style={{
         backgroundImage: "url(../public/login.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       }}
-      className="h-screen grid place-items-center w-full"
+      className="h-screen grid place-items-center w-full bg-cover bg-center"
     >
       <Form method="post" className="max-w-96 mx-auto w-full">
         <h2 className="text-4xl text-center mb-5 font-bold">Login</h2>

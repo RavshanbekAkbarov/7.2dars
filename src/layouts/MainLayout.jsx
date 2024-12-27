@@ -1,10 +1,16 @@
 import { Outlet } from "react-router-dom";
+import Siedbar from "../components/siedbar";
+import OnlineUsersr from "../components/OnlineUsersr";
 
 function MainLayout() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <div className="flex justify-between">
+      <Siedbar />
+      <main className="w-full bg-stone-200  text-black">
+        <Outlet />
+      </main>
+      <OnlineUsersr />
+    </div>
   );
 }
 

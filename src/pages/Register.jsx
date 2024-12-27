@@ -39,14 +39,8 @@ function Register() {
     <div
       style={{
         backgroundImage: "url(../public/login.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
       }}
-      className="h-screen grid place-items-center w-full"
+      className="h-screen grid place-items-center w-full  bg-cover bg-center"
     >
       <Form
         action=""
