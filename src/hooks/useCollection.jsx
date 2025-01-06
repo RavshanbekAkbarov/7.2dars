@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 
 export function useCollection(collectionName) {
   const [documents, setDocuments] = useState(null);
+
   useEffect(() => {
     const q = collection(db, collectionName);
-
-    onSnapshot(q, (querySnapshot) => {
+    onSnapshot(q, (querySnapshout) => {
       const data = [];
-      querySnapshot.forEach((snapshot) => {
+      querySnapshout.forEach((snapshot) => {
         data.push({ id: snapshot.id, ...snapshot.data() });
       });
       setDocuments(data);

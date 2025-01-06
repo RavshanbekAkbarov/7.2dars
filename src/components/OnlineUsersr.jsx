@@ -1,4 +1,4 @@
-import { useCollection } from "../hooks/useClollection";
+import { useCollection } from "../hooks/useCollection";
 
 function OnlineUsersr() {
   const { documents } = useCollection("users");
