@@ -76,9 +76,9 @@ function Register() {
 
         <div className="my-5 flex flex-col gap-3">
           <button className="btn btn-warning btn-block">Register</button>
-          <button type="button" className="btn btn-secondary btn-block ">
+          {/* <button type="button" className="btn btn-secondary btn-block ">
             Google
-          </button>
+          </button> */}
         </div>
 
         <div className="text-center ">
