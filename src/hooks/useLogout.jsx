@@ -1,15 +1,22 @@
 import { toast } from "react-toastify";
-import { auth } from "../firebase/config";
+import { auth, db } from "../firebase/config";
 import { signOut } from "firebase/auth";
+import { useSelector } from "react-redux";
+import { doc, updateDoc } from "firebase/firestore";
 
 export function useLogout() {
-  const logout = () => {
+  const { user } = useSelector((store) => store.user);
+  const logout = async () => {
+    let ref = doc(db, "users", user.uid);
+    await updateDoc(ref, {
+      online: false,
+    });
     signOut(auth)
       .then(() => {
-        toast.success("See you soon");
+        toast.success("See you again")
       })
-      .catch((error) => {
-        toast.error("Xato!")
+      .catch(() => {
+        toast.error(error.message);
       });
   };
   return { logout };

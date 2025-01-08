@@ -3,7 +3,7 @@ import { onSnapshot, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 export function useCollection(collectionName) {
-  const [documents, setDocuments] = useState(null);
+  const [doc, setDoc] = useState(null);
 
   useEffect(() => {
     const q = collection(db, collectionName);
@@ -12,8 +12,8 @@ export function useCollection(collectionName) {
       querySnapshout.forEach((snapshot) => {
         data.push({ id: snapshot.id, ...snapshot.data() });
       });
-      setDocuments(data);
+      setDoc(data);
     });
   }, [collectionName]);
-  return { documents };
+  return { doc };
 }
