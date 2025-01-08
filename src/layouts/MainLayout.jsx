@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Siedbar from "../components/siedbar";
+import Siedbar from "../components/Siedbar";
 import OnlineUsersr from "../components/OnlineUsersr";
 
 function MainLayout() {
